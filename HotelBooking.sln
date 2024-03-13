@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34616.47
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelBooking.Data", "HotelBooking.Data\HotelBooking.Data.csproj", "{B966246D-2F39-427A-9FCA-172C7757FF67}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotelBooking.Data", "HotelBooking.Data\HotelBooking.Data.csproj", "{B966246D-2F39-427A-9FCA-172C7757FF67}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelBooking.Web", "HotelBooking.Web\HotelBooking.Web.csproj", "{51A2296E-C82B-462E-8FC2-03704466394D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotelBookingWeb.API", "HotelBookingWeb.API\HotelBookingWeb.API.csproj", "{F030D6E9-C593-46B6-AF4C-7F95CB58DFC3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelBookingWeb.API", "HotelBookingWeb.API\HotelBookingWeb.API.csproj", "{F030D6E9-C593-46B6-AF4C-7F95CB58DFC3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelBookingWeb", "HotelBookingWeb\HotelBookingWeb.csproj", "{30B33E58-B3C6-4CFC-A55E-B941C72D207E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,14 +19,14 @@ Global
 		{B966246D-2F39-427A-9FCA-172C7757FF67}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B966246D-2F39-427A-9FCA-172C7757FF67}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B966246D-2F39-427A-9FCA-172C7757FF67}.Release|Any CPU.Build.0 = Release|Any CPU
-		{51A2296E-C82B-462E-8FC2-03704466394D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{51A2296E-C82B-462E-8FC2-03704466394D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{51A2296E-C82B-462E-8FC2-03704466394D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{51A2296E-C82B-462E-8FC2-03704466394D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F030D6E9-C593-46B6-AF4C-7F95CB58DFC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F030D6E9-C593-46B6-AF4C-7F95CB58DFC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F030D6E9-C593-46B6-AF4C-7F95CB58DFC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F030D6E9-C593-46B6-AF4C-7F95CB58DFC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30B33E58-B3C6-4CFC-A55E-B941C72D207E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30B33E58-B3C6-4CFC-A55E-B941C72D207E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30B33E58-B3C6-4CFC-A55E-B941C72D207E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30B33E58-B3C6-4CFC-A55E-B941C72D207E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

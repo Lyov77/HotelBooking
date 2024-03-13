@@ -30,6 +30,9 @@ namespace HotelBooking.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<int>("Amount")
+                        .HasColumnType("int");
+
                     b.Property<int>("DaysNumber")
                         .HasColumnType("int");
 
@@ -47,16 +50,21 @@ namespace HotelBooking.Data.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("RoomId");
+
+                    b.HasIndex("UserId");
+
                     b.ToTable("Bookings");
 
                     b.HasData(
                         new
                         {
                             Id = 1,
+                            Amount = 0,
                             DaysNumber = 3,
                             IsDeleted = false,
                             RoomId = 1,
-                            StartDate = new DateTime(2024, 3, 12, 16, 54, 50, 5, DateTimeKind.Local).AddTicks(7083),
+                            StartDate = new DateTime(2024, 3, 13, 17, 20, 32, 187, DateTimeKind.Local).AddTicks(8241),
                             UserId = 1
                         });
                 });
@@ -83,6 +91,9 @@ namespace HotelBooking.Data.Migrations
                     b.Property<float>("Rating")
                         .HasColumnType("real");
 
+                    b.Property<int>("RatingCount")
+                        .HasColumnType("int");
+
                     b.Property<int>("Stars")
                         .HasColumnType("int");
 
@@ -98,6 +109,7 @@ namespace HotelBooking.Data.Migrations
                             IsDeleted = false,
                             Name = "Agababyans",
                             Rating = 0f,
+                            RatingCount = 0,
                             Stars = 5
                         },
                         new
@@ -107,6 +119,7 @@ namespace HotelBooking.Data.Migrations
                             IsDeleted = false,
                             Name = " Mariot",
                             Rating = 0f,
+                            RatingCount = 0,
                             Stars = 5
                         });
                 });
@@ -209,6 +222,25 @@ namespace HotelBooking.Data.Migrations
                             Login = "artur.a",
                             Password = "abraham777"
                         });
+                });
+
+            modelBuilder.Entity("HotelBooking.Data.Entity.Booking", b =>
+                {
+                    b.HasOne("HotelBooking.Data.Entity.Room", "Room")
+                        .WithMany()
+                        .HasForeignKey("RoomId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("HotelBooking.Data.Entity.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Room");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("HotelBooking.Data.Entity.Room", b =>

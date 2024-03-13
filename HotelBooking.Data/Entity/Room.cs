@@ -11,7 +11,7 @@ namespace HotelBooking.Data.Entity
     public class Room : EntityBase
     {
         [Required]
-        public string RoomCategory { get; set; }
+        public string RoomCategory { get; set; } = string.Empty;
 
         public bool isAvailable { get; set; } = true;
 
@@ -20,7 +20,7 @@ namespace HotelBooking.Data.Entity
 
         public string? Description { get; set; }
 
-        public Hotel Hotel { get; set; }
+        public Hotel? Hotel { get; set; }
         
         [Required]
         [ForeignKey(nameof(Hotel))]

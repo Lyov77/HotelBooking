@@ -19,6 +19,8 @@ namespace HotelBooking.Data.Entity
         
         [Range(1, 11)]
         public float Rating { get; set; }
+
+        public int RatingCount { get; set; }
         
         [Required]
         public string City { get; set; } = string.Empty;
