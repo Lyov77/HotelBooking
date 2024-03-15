@@ -19,7 +19,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\HotelBookingWeb.API\HotelBookingWeb.API.csproj" />
+    <ProjectReference Include="..\MyProjectShared\MyProjectShared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="MyProjectShared.SharedModels" />
   </ItemGroup>
 
 </Project>

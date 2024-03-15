@@ -11,7 +11,9 @@ namespace HotelBookingWeb.Data
         {
         }
     }
-
+    /// <summary>
+    /// 
+    /// </summary>
     public class ApplicationUser : IdentityUser
     {
 

@@ -2,6 +2,7 @@
 using HotelBooking.Data.Entity;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
+using MyProjectShared.SharedModels;
 
 namespace HotelBookingWeb.API.Controllers
 {
@@ -23,7 +24,7 @@ namespace HotelBookingWeb.API.Controllers
             return Ok(rooms);
         }
 
-        
+
         [HttpPost]
         [Route("Price")]
         public async Task<IActionResult> UpdatePrice(int roomId, int price)
@@ -35,22 +36,28 @@ namespace HotelBookingWeb.API.Controllers
             }
             return NotFound("Room NOT found!");
         }
-        
-        
-             
 
-        /*[HttpPost]
+
+        [HttpPost]
         [Route("Add")]
-        public async Task<IActionResult> Add(Room room)
+        public async Task<IActionResult> Add(RoomViewModel roomViewModel)
         {
+            Room room = new()
+            {
+                RoomCategory = roomViewModel.RoomCategory,
+                Description = roomViewModel.Description,
+                Price = roomViewModel.Price,
+                HotelId = roomViewModel.HotelId
+            };
+
             if (ModelState.IsValid)
             {
-                await _hotelRepository.AddHotelAsync(room);
+                await _hotelRepository.AddRoomAsync(room);
 
                 return Ok(room);
             }
 
             return NotFound("Room NOT added!");
-        }*/
+        }
     }
 }

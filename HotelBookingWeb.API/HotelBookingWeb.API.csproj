@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\HotelBooking.Data\HotelBooking.Data.csproj" />
+    <ProjectReference Include="..\MyProjectShared\MyProjectShared.csproj" />
   </ItemGroup>
 
 </Project>

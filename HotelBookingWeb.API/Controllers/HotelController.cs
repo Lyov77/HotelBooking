@@ -2,6 +2,7 @@
 using HotelBooking.Data.Entity;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
+using MyProjectShared.SharedModels;
 
 namespace HotelBookingWeb.API.Controllers
 {
@@ -45,15 +46,20 @@ namespace HotelBookingWeb.API.Controllers
                 await _hotelRepository.UpdateHotelRatingAsync(hotelId, rating);
 
                 return Ok();
-
             }
             return NotFound("Error! Rating NOT added!");
         }
 
         [HttpPost]
         [Route("Add")]
-        public async Task<IActionResult> Add(Hotel hotel)
+        public async Task<IActionResult> Add(HotelViewModel hotelViewModel)
         {
+            Hotel hotel = new()
+            {
+                City = hotelViewModel.City,
+                Stars = hotelViewModel.Stars
+            };
+
             if (ModelState.IsValid)
             {
                 await _hotelRepository.AddHotelAsync(hotel);

@@ -52,6 +52,10 @@ namespace HotelBooking.Data.Concrete
         {
             return _context.Hotels.AsQueryable();
         }
+        public IQueryable<Booking> GetAllBookings()
+        {
+            return _context.Bookings.AsQueryable();
+        }
 
         public IQueryable<Room> GetAllRooms(int HotelId)
         {
@@ -78,11 +82,7 @@ namespace HotelBooking.Data.Concrete
         {
             Room? room = await _context.Rooms.FindAsync(roomId);
 
-            if (room.isAvailable)
-            {
-                room.isAvailable = false;
-            }
-            else room.isAvailable = true;
+            room.isAvailable = !room.isAvailable;
 
             await _context.SaveChangesAsync();
         }
