@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Connections;
 using Microsoft.AspNetCore.Mvc;
-using System.Text.Json;
+using Newtonsoft.Json;
 
 namespace HotelBookingWeb.Controllers
 {
@@ -23,7 +23,7 @@ namespace HotelBookingWeb.Controllers
             response.EnsureSuccessStatusCode();
 
             var responseBody = await response.Content.ReadAsStringAsync();
-            var hotels = JsonSerializer.Deserialize<List<HotelViewModel>>(responseBody);
+            var hotels = JsonConvert.DeserializeObject<List<HotelViewModel>>(responseBody);
 
             // Pass hotels to the view
             return View(hotels);

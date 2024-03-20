@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace HotelBookingWeb.Entities
 {
-    public class HotelUser : IdentityUser
+    public class User : IdentityUser
     {
         [Required]
         public string FullName { get; set; } = string.Empty;
